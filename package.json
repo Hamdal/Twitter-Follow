@@ -1,0 +1,16 @@
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "My first twitter bot",
+  "main": "twitter-bot.js",
+  "start": "twitter-bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "forecastio": "^1.0.2",
+    "twit": "^2.2.5"
+  }
+}
