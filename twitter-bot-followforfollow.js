@@ -44,7 +44,8 @@ function tweeted(eventMsg) {
                 // Add the user to the list of followforfollow users
                 const fs = require('fs');
                 users = JSON.parse(fs.readFileSync('followers.json', 'utf-8'));
-                if (!(user_id in users.followers)) {
+
+                if (!(user_id in users.followers_arr)) {
                     users.followers_arr.push(user_id);
                     users.no_of_followers += 1;
                 }
