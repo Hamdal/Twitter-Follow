@@ -24,7 +24,7 @@ function tweeted(eventMsg) {
         console.log('follow this user back');
 
         params = {
-            screen_name: twitter_handle
+            screen_name: 'Hamdalofficial'
         }
 
         // Getting account followers
