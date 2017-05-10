@@ -17,13 +17,14 @@ function tweeted(eventMsg) {
     const user_id = eventMsg.user.id;
     const text = eventMsg.text;
     const status_id = eventMsg.id;
+    const twitter_handle = 'Hamdalofficial';
 
 
     if (text.indexOf('#followforfollow') != -1 ) {
         console.log('follow this user back');
 
         // Getting account followers
-        T.get('followers/ids', {screen_name: 'BotHamdal'}, function(err, data, response) { 
+        T.get('followers/ids', {screen_name: twitter_handle}, function(err, data, response) { 
             followers = data.ids;
 
             // checking to see if the user is among account followers
