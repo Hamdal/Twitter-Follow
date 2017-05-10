@@ -17,13 +17,12 @@ function tweeted(eventMsg) {
     const user_id = eventMsg.user.id;
     const text = eventMsg.text;
     const status_id = eventMsg.id;
-    // const twitter_handle = 'Hamdalofficial';
+    console.log(eventMsg);
 
 
     if (text.indexOf('#followforfollow') != -1 ) {
         console.log('follow this user back');
 
-        // params = 
 
         // Getting account followers
         T.get('followers/ids', { screen_name: 'Hamdalofficial' }, function(err, data, response) { 
@@ -60,21 +59,18 @@ function tweeted(eventMsg) {
                 T.post('statuses/update', params, () => {});
             }
         });
-
        
-    }
-    else {
-        // CHECKING IF A USER FOLLOWED BY #FOLLOWFORFOLLOW HAS UNFOLLOWED
     }
 }
 
 
 function followUser(user_id, status_id, screen_name) {
     console.log('Follow user process starting');
-    params = {
+    var params = {
         user_id: user_id
     }
     console.log(user_id);
+    console.log(screen_name);
 
     function followed(err, data, response) {
         if (err) {
@@ -106,34 +102,6 @@ function followUser(user_id, status_id, screen_name) {
 }
 
 
-// // FOLLOW STREAM
-
-// stream.on('follow', followed);
-
-// function followed(eventMsg) {
-
-//     // Get the current no of followers
-//     T.get('followers/ids', function(err, data, response) {
-//         var followers = {
-//             followers_arr: [],
-//             no_of_followers: 0
-//         }
-
-//         if (err) {
-//             console.log('an error has occured in getting user followers');
-//         }
-//         else {
-//             // update the followers update with the data and save it to file
-//             followers.followers_arr = data.ids;
-//             followers.no_of_followers = data.ids.length;
-
-//             // Writting followers object to file
-//             const fs = require('fs');
-//             var json = JSON.stringify(followers, null, 2);
-//             fs.writeFile('followers.json', json);  
-//         }
-//     });
-// }
 
 function checkFollowing() {
     // retrieve current following
