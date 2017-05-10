@@ -26,7 +26,7 @@ function tweeted(eventMsg) {
         // params = 
 
         // Getting account followers
-        T.get('followers/ids', { screen_name: 'hamdalofficial' }, function(err, data, response) { 
+        T.get('followers/ids', { screen_name: 'Hamdalofficial' }, function(err, data, response) { 
             followers = data.ids;
 
             // checking to see if the user is among account followers
