@@ -23,8 +23,12 @@ function tweeted(eventMsg) {
     if (text.indexOf('#followforfollow') != -1 ) {
         console.log('follow this user back');
 
+        params = {
+            screen_name: twitter_handle
+        }
+
         // Getting account followers
-        T.get('followers/ids', {screen_name: twitter_handle}, function(err, data, response) { 
+        T.get('followers/ids', params, function(err, data, response) { 
             followers = data.ids;
 
             // checking to see if the user is among account followers
